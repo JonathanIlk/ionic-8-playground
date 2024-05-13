@@ -13,8 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div>
+      Item 1: Plain Text works as expected <br>
+      Item 2: Span inside ion-label works as expected <br>
+      Item 3: ion-label with innerHTML which contains a span gets the attribute hidden set on it. <br>
+      Item 4: innerHTML set directly on ion-item without ion-label
+    </div>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Plain Text Item</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <span>
+            Span Text Item
+          </span>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label [innerHTML]="'<span>Span with Innerhtml</span>'">
+        </ion-label>
+      </ion-item>
+      <ion-item [innerHTML]="'<span>Span with Innerhtml</span>'">
+
+      </ion-item>
+    </ion-list>
+
+  <ion-button (click)="removeAllHiddenAttributesPlainJs()">
+    Remove all hidden attributes
+  </ion-button>
 </ion-content>

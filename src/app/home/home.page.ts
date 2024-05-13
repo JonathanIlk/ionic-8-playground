@@ -9,4 +9,10 @@ export class HomePage {
 
   constructor() {}
 
+  removeAllHiddenAttributesPlainJs() {
+    const elements = document.querySelectorAll('[hidden]');
+    elements.forEach(element => {
+      element.removeAttribute('hidden');
+    });
+  }
 }
